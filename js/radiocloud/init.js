@@ -1,0 +1,4 @@
+
+  $(function() {
+    $('.toggle-one').bootstrapToggle();
+  })

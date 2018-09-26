@@ -1,0 +1,1 @@
+<span class="badge badge-{{COLOR}}">{{NAME}}: <strong>{{LISTENERS}}</strong></span> 

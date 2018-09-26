@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RadioCloud :: Radio Automation System</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!--STYLESHEET-->
+        <!--=================================================-->
+        <!--Roboto Slab Font [ OPTIONAL ] -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,700" rel="stylesheet">
+        <!--Bootstrap Stylesheet [ REQUIRED ]-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--Jasmine Stylesheet [ REQUIRED ]-->
+        <link href="css/style.css" rel="stylesheet">
+        <!--Font Awesome [ OPTIONAL ]-->
+        <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!--Switchery [ OPTIONAL ]-->
+        <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+        <!--Bootstrap Select [ OPTIONAL ]-->
+        <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+        <!--Bootstrap Validator [ OPTIONAL ]-->
+        <link href="plugins/bootstrap-validator/bootstrapValidator.min.css" rel="stylesheet">
+        <!--ricksaw.js [ OPTIONAL ]-->
+        <link href="plugins/jquery-ricksaw-chart/css/rickshaw.css" rel="stylesheet">
+        <!--jVector Map [ OPTIONAL ]-->
+        <link href="plugins/jvectormap/jquery-jvectormap.css" rel="stylesheet">
+        <!--Demo [ DEMONSTRATION ]-->
+        <link href="css/demo/jquery-steps.min.css" rel="stylesheet">
+        <!--Demo [ DEMONSTRATION ]-->
+        <link href="css/demo/jasmine.css" rel="stylesheet">
+        <!--SCRIPT-->
+        <!--=================================================-->
+        <!--Page Load Progress Bar [ OPTIONAL ]-->
+        <link href="plugins/pace/pace.min.css" rel="stylesheet">
+        <script src="plugins/pace/pace.min.js"></script>
+    </head>
+    <!--TIPS-->
+    <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+    <body>
+        <div id="container" class="effect mainnav-lg navbar-fixed mainnav-fixed">
+            <!--NAVBAR-->
+            <!--===================================================-->
+            <header id="navbar">
+                <div id="navbar-container" class="boxed">
+                    <!--Brand logo & name-->
+                    <!--================================-->
+                    <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
+                           <i class="fa fa-cloud brand-icon"></i>
+                            <div class="brand-title">
+                                <span class="brand-text">RadioCloud</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!--================================-->
+                    <!--End brand logo & name-->
+                    <!--Navbar Dropdown-->
+                    <!--================================-->
+                    <div class="navbar-content clearfix">
+                        <ul class="nav navbar-top-links pull-left">
+                            <!--Navigation toogle button-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                         <!--   <li class="tgl-menu-btn">
+                                <a class="mainnav-toggle" href="#"> <i class="fa fa-navicon fa-lg"></i> </a>
+                            </li>-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End Navigation toogle button-->
+                            <!--Profile toogle button-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <li class="hidden-xs">
+                                <a href="JavaScript:void(0);"> <i class="fa fa-cogs fa-lg"></i> </a>
+                            </li>
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End Profile toogle button-->
+                            <!--Messages Dropdown-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            {{MESSAGES}}
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End message dropdown-->
+                            <!--Notification dropdown-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            {{NOTIFICATIONS}}
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End notifications dropdown-->
+                        </ul>
+                        <ul class="nav navbar-top-links pull-right">
+                            <!--Fullscreen toogle button-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <!-- <li class="hidden-xs" id="toggleFullscreen">
+                                <a class="fa fa-expand" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                                </a>
+                            </li>-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End Fullscreen toogle button-->
+                            <!--User dropdown-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            {{USER_PROFILE}}
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End user dropdown-->
+                            <!--Navigation toogle button-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <!-- <li class="hidden-xs">
+                                <a id="demo-toggle-aside" href="#">
+                                <i class="fa fa-navicon fa-lg"></i>
+                                </a>
+                            </li>-->
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End Navigation toogle button-->
+                        </ul>
+                    </div>
+                    <!--================================-->
+                    <!--End Navbar Dropdown-->
+                </div>
+            </header>
+            <!--===================================================-->
+            <!--END NAVBAR-->
+            <div class="boxed">
+                <!--CONTENT CONTAINER-->
+                <!--===================================================-->
+                <div id="content-container">
+                    
+                    <!--Page Title-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    {{CURRENT_LOCATION}}
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End page title-->
+                    <!--Page content-->
+                    <!--===================================================-->
+                    <div id="page-content">
+                       {{CONTENT}}
+                    </div>
+                    <!--===================================================-->
+                    <!--End page content-->
+                </div>
+                <!--===================================================-->
+                <!--END CONTENT CONTAINER-->
+                <!--MAIN NAVIGATION-->
+                <!--===================================================-->
+                <nav id="mainnav-container">
+                    <div id="mainnav">
+                        <!--Menu-->
+                        <!--================================-->
+                        {{MAIN_MENU}}
+                        <!--================================-->
+                        <!--End menu-->
+                    </div>
+                </nav>
+                <!--===================================================-->
+                <!--END MAIN NAVIGATION-->
+                <!--ASIDE--> 
+                <!--===================================================-->
+                {{ASIDE}}
+                <!--===================================================--> 
+                <!--END ASIDE-->
+                <!--RIGHT CHAT MESSANGER--> 
+                <!--===================================================-->
+                {{CHAT}}
+                <!--END RIGHT CHAT MESSANGER--> 
+                <!--===================================================-->
+            </div>
+            <!-- FOOTER -->
+            <!--===================================================-->
+            <footer id="footer">
+              {{FOOTER}}
+            </footer>
+            <!--===================================================-->
+            <!-- END FOOTER -->
+            <!-- SCROLL TOP BUTTON -->
+            <!--===================================================-->
+            <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+            <!--===================================================-->
+        </div>
+        <!--===================================================-->
+        <!-- END OF CONTAINER -->
+        <!--JAVASCRIPT-->
+        <!--=================================================-->
+        <!--jQuery [ REQUIRED ]-->
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <!--BootstrapJS [ RECOMMENDED ]-->
+        <script src="js/bootstrap.min.js"></script>
+        <!--Fast Click [ OPTIONAL ]-->
+        <script src="plugins/fast-click/fastclick.min.js"></script>
+        <!--Jasmine Admin [ RECOMMENDED ]-->
+        <script src="js/scripts.js"></script>
+        <!--Jquery Nano Scroller js [ REQUIRED ]-->
+        <script src="plugins/nanoscrollerjs/jquery.nanoscroller.min.js"></script>
+        <!--Metismenu js [ REQUIRED ]-->
+        <script src="plugins/metismenu/metismenu.min.js"></script>
+        <!--Switchery [ OPTIONAL ]-->
+        <script src="plugins/switchery/switchery.min.js"></script>
+        <!--Jquery Steps [ OPTIONAL ]-->
+        <script src="plugins/parsley/parsley.min.js"></script>
+        <!--Jquery Steps [ OPTIONAL ]-->
+        <script src="plugins/jquery-steps/jquery-steps.min.js"></script>
+        <!--Bootstrap Select [ OPTIONAL ]-->
+        <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+        <!--Bootstrap Wizard [ OPTIONAL ]-->
+        <script src="plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+        <!--Masked Input [ OPTIONAL ]-->
+        <script src="plugins/masked-input/bootstrap-inputmask.min.js"></script>
+        <!--Bootstrap Validator [ OPTIONAL ]-->
+        <script src="plugins/bootstrap-validator/bootstrapValidator.min.js"></script>
+        <!--Flot Chart [ OPTIONAL ]-->
+        <script src="plugins/flot-charts/jquery.flot.min.js"></script>
+        <script src="plugins/flot-charts/jquery.flot.resize.min.js"></script>
+        <!--Flot Order Bars Chart [ OPTIONAL ]-->
+        <script src="plugins/flot-charts/jquery.flot.categories.js"></script>
+        <!--jQuery Ricksaw Chart [ OPTIONAL ]-->
+        <script src="plugins/rickshaw-master/vendor/d3.v2.js"></script>
+        <script src="plugins/rickshaw-master/src/js/rickshaw.js"></script>
+        <script src="plugins/rickshaw-master/rickshaw.min.js"></script>
+        <!--Easy Pie Chart [ OPTIONAL ]-->
+        <script src="plugins/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <!--Fullscreen jQuery [ OPTIONAL ]-->
+        <script src="plugins/screenfull/screenfull.js"></script>
+        <!--Form Wizard [ SAMPLE ]-->
+        <script src="js/demo/index.js"></script>
+        <!--Form Wizard [ SAMPLE ]-->
+        <script src="js/demo/wizard.js"></script>
+        <!--Form Wizard [ SAMPLE ]-->
+        <script src="js/demo/form-wizard.js"></script>
+    </body>
+</html>
