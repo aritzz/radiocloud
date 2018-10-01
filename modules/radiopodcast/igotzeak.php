@@ -55,14 +55,14 @@ else if ($_POST) // Sending form info
 	$errepikatu = ($db->escape($_POST['errepikatu']) == "on") ? 1 : 0;
 	$igo_web = ($db->escape($_POST['igo_web'])) ? 1 : 0;
 	$igo_arrosa = ($db->escape($_POST['igo_arrosa'])) ? 1 : 0;
-	$kopiatu = ($db->escape($_POST['kopiatu'])) ? 1 : 0;
+	//$kopiatu = ($db->escape($_POST['kopiatu'])) ? 1 : 0;
 	$fitxategi_id = $db->escape($_POST['fitxategi_id']);
 	$testua = $db->escape($_POST['editorea']);
 	
 
 	if (!empty($titulua) or !empty($data))
 	{
-		$db->query("UPDATE podcast_upload SET title='$titulua', date='$data', text='$testua', add_repeat='$errepikatu', add_podcast='$igo_web', add_arrosa='$igo_arrosa', add_copy='$kopiatu', is_trash='0' WHERE id='$fitxategi_id'");
+		$db->query("UPDATE podcast_upload SET title='$titulua', date='$data', text='$testua', add_repeat='$errepikatu', add_podcast='$igo_web', add_arrosa='$igo_arrosa', load_date=NOW(), is_trash='0' WHERE id='$fitxategi_id'");
 		$myid = $current_user->login_realid;
 		$db->query("DELETE FROM active_repeats WHERE progid='$myid'");
 		$db->query("INSERT INTO active_repeats VALUES('$myid', '$titulua', NOW(), 1)");
