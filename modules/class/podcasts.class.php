@@ -44,7 +44,7 @@ class RC_Podcast {
         
         if (!empty($eguna) or !empty($ordua) or !empty($url) or !empty($blockid) or !empty($mota))
         {
-            $db->query("INSERT INTO podcast_download VALUES(NULL, '$url', '$eguna', '$ordua', '$blockid', '$mota', '', '')");
+            $db->query("INSERT INTO podcast_download VALUES(NULL, '$url', '$eguna', '$ordua', '$blockid', '$mota', '', NULL)");
             $ret = $db->insert_id;
         }
         
