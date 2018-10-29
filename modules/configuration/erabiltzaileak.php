@@ -144,7 +144,10 @@ if (($_GET['t'] == "gehitu_remote") && !$_POST)
 		    $block_id = $db->insert_id;
 			$db->query("INSERT INTO programs VALUES(NULL, '$progizena', '$eguna', '$ordua', '$iraupena', '$arrosau', '$arrosap', '$arrosac', $zuzenekoa, '$block_id', 1)");
 			$program_id = $db->insert_id;
-			$db->query("INSERT INTO users VALUES(NULL, '$erabiltzailea', 'password', '$progizena', '$progdeskripzioa', $program_id, 1, MD5('$pasahitza'), '$argazkia', 20)");
+            if (get_config('ldap_status') == 0)
+                $db->query("INSERT INTO users VALUES(NULL, '$erabiltzailea', MD5('$pasahitza'), '$progizena', '$progdeskripzioa', $program_id, 1, 'internal', '$argazkia', 20)");
+            else
+                $db->query("INSERT INTO users VALUES(NULL, '$erabiltzailea', 'password', '$progizena', '$progdeskripzioa', $program_id, 1, 'external', '$argazkia', 20)");
 			$insertuser_id = $db->insert_id;
             
             $defaults = $db->get_results("SELECT * FROM access WHERE access_user = -1");
